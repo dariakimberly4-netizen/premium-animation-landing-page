@@ -4,146 +4,283 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#06291f">
-<title>Starbucks Home — Premium Motion Concept</title>
-<meta name="description" content="A premium cinematic Starbucks homepage concept connected to an existing Menu Orbit.">
+<title>About Starbucks — Reimagined Story</title>
+<meta name="description" content="An unofficial cinematic redesign of the Starbucks Philippines About Us story, using starbucks.ph/about-us as the sole content source.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--g:#006241;--d:#052b21;--c:#f4efe7;--m:#b8e4cf;--i:#152019}
+:root{
+  --green:#006241;--deep:#052b21;--dark:#071713;--cream:#f4efe7;
+  --mint:#b8e4cf;--ink:#152019;--gold:#d7b56d;--line:rgba(255,255,255,.15)
+}
 html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;background:var(--c);color:var(--i);overflow-x:hidden}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-.top{position:fixed;z-index:100;top:0;left:0;right:0;height:72px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;color:#fff;mix-blend-mode:difference}
-.brand{font-weight:800;letter-spacing:.18em;font-size:12px}.nav{display:flex;gap:22px;align-items:center;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-.nav .menu{padding:11px 15px;border:1px solid currentColor;border-radius:999px}
-.hero{min-height:100svh;position:relative;overflow:hidden;background:radial-gradient(circle at 68% 47%,rgba(0,98,65,.42),transparent 29%),linear-gradient(145deg,#093c2d,#041b15 62%,#020b09);color:#fff}
-.noise{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(rgba(255,255,255,.85) .55px,transparent .55px);background-size:6px 6px}
-.bgword{position:absolute;left:-2vw;bottom:3vh;font:700 clamp(120px,22vw,340px)/.7 "Playfair Display",serif;letter-spacing:-.075em;color:rgba(255,255,255,.045);white-space:nowrap}
-.copy{position:absolute;z-index:5;left:6vw;top:50%;transform:translateY(-50%);width:min(600px,44vw)}
-.kicker{font-size:10px;letter-spacing:.22em;font-weight:800;color:var(--m);text-transform:uppercase}
-.copy h1,.statement h2,.feature h3,.final h2{font-family:"Playfair Display",serif;letter-spacing:-.05em}
-.copy h1{font-size:clamp(62px,8vw,118px);line-height:.86;margin:16px 0 22px}
-.copy p{font-size:17px;line-height:1.72;color:rgba(255,255,255,.72);max-width:510px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{min-height:50px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
-.primary{background:#fff;color:var(--d)}.ghost{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.05)}
-.orbit{position:absolute;left:69%;top:50%;transform:translate(-50%,-50%);width:min(650px,48vw);aspect-ratio:1}
-.r1,.r2,.r3{position:absolute;border-radius:50%}.r1{inset:0;border:1px solid rgba(255,255,255,.2)}.r2{inset:12%;border:6px solid rgba(184,228,207,.55);border-left-color:transparent}.r3{inset:26%;border:1px dashed rgba(255,255,255,.24)}
-.cupwrap{position:absolute;z-index:6;left:69%;top:50%;transform:translate(-50%,-50%);width:min(305px,24vw);perspective:1000px}
-.cup{width:100%;border-radius:30px;filter:drop-shadow(0 38px 50px rgba(0,0,0,.38));will-change:transform}
-.shadow{position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);width:72%;height:30px;border-radius:50%;background:rgba(0,0,0,.36);filter:blur(18px)}
-.hint{position:absolute;left:50%;bottom:-52px;transform:translateX(-50%);font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.55);white-space:nowrap}
-.statement{min-height:88svh;background:#f1e7da;display:grid;place-items:center;padding:80px 6vw;text-align:center}
-.statement h2{font-size:clamp(60px,9vw,132px);line-height:.84;color:var(--g);max-width:1180px}
-.statement p{max-width:680px;margin:24px auto 0;font-size:17px;line-height:1.75;color:#67706a}
-.ribbon{overflow:hidden;background:var(--g);color:#fff}.track{display:flex;width:max-content}.track span{font:600 clamp(42px,6vw,86px)/1 "Playfair Display",serif;white-space:nowrap;padding:20px 0}
-.features{padding:120px 5vw;background:#0b1612;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.feature{min-height:520px;border-radius:34px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.feature:nth-child(1){background:#0c513b}.feature:nth-child(2){background:#d9cbbd;color:#132019}.feature:nth-child(3){background:#111}
-.feature small{position:absolute;top:26px;left:30px;font-weight:800;letter-spacing:.16em}
-.feature h3{font-size:clamp(36px,3.5vw,54px);line-height:.96;margin-bottom:14px}.feature p{line-height:1.7;opacity:.74}
-.feature b{position:absolute;right:-10px;top:12%;font:700 clamp(80px,10vw,170px)/1 "Playfair Display",serif;opacity:.07;letter-spacing:-.06em}
-.final{min-height:95svh;background:linear-gradient(135deg,#dcebe2,#f4efe7);display:grid;place-items:center;text-align:center;padding:70px 24px;position:relative;overflow:hidden}
-.final:before{content:"";position:absolute;width:min(760px,80vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(0,98,65,.15);box-shadow:0 0 0 55px rgba(0,98,65,.025),0 0 0 115px rgba(0,98,65,.012)}
-.final>div{position:relative;z-index:2}.final h2{font-size:clamp(62px,9vw,126px);line-height:.86;color:var(--g);max-width:980px;margin:16px auto 28px}.final p{max-width:680px;margin:auto;line-height:1.7;color:#66706a}
-.final .primary{background:var(--g);color:#fff;margin-top:28px}
-footer{padding:26px 5vw;background:#061711;color:rgba(255,255,255,.6);display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-@media(max-width:900px){.nav>a:not(.menu){display:none}.copy{left:50%;top:16%;transform:translateX(-50%);width:90vw;text-align:center}.copy p{margin:auto}.actions{justify-content:center}.orbit{left:50%;top:70%;width:min(520px,90vw)}.cupwrap{left:50%;top:70%;width:min(250px,54vw)}.grid{grid-template-columns:1fr}.feature{min-height:420px}}
-@media(max-width:560px){.top{height:64px;padding:0 18px}.copy{top:11%}.copy h1{font-size:56px}.copy p{font-size:15px}.orbit{top:71%;width:95vw}.cupwrap{top:71%;width:57vw}.statement{padding:70px 18px}.statement h2{font-size:54px}.features{padding:90px 18px}.feature{border-radius:28px;padding:24px}.final h2{font-size:54px}footer{padding:24px 18px;flex-direction:column;align-items:flex-start}}
+button{font:inherit}
+.progress{position:fixed;left:0;top:0;height:3px;width:0;background:var(--mint);z-index:200}
+.nav{position:fixed;z-index:120;left:0;right:0;top:0;height:72px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;color:white;mix-blend-mode:difference}
+.brand{font-size:12px;font-weight:800;letter-spacing:.18em}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.navlinks .pill{border:1px solid currentColor;border-radius:999px;padding:10px 14px}
+.hero{min-height:100svh;position:relative;overflow:hidden;background:radial-gradient(circle at 66% 45%,rgba(0,98,65,.5),transparent 28%),linear-gradient(145deg,#0a3a2c,#041b15 62%,#020d0a);color:white}
+.noise{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(rgba(255,255,255,.8) .5px,transparent .5px);background-size:6px 6px}
+.hero-year{position:absolute;left:-2vw;bottom:1vh;font:700 clamp(170px,32vw,510px)/.72 "Playfair Display",serif;letter-spacing:-.08em;color:rgba(255,255,255,.035)}
+.hero-copy{position:absolute;left:6vw;top:50%;transform:translateY(-50%);z-index:6;width:min(650px,48vw)}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--mint)}
+.hero-copy h1,.intro h2,.chapter h2,.ph-copy h2,.mission h2,.value h3,.ending h2{font-family:"Playfair Display",serif;letter-spacing:-.05em}
+.hero-copy h1{font-size:clamp(68px,9vw,136px);line-height:.84;margin:16px 0 24px}
+.hero-copy p{font-size:18px;line-height:1.75;color:rgba(255,255,255,.72);max-width:560px}
+.hero-cta{display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:15px 20px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.06);font-size:13px;font-weight:800;backdrop-filter:blur(10px)}
+.siren-orbit{position:absolute;left:69%;top:50%;transform:translate(-50%,-50%);width:min(660px,50vw);aspect-ratio:1}
+.siren-orbit .o1,.siren-orbit .o2,.siren-orbit .o3{position:absolute;border-radius:50%}
+.o1{inset:0;border:1px solid rgba(255,255,255,.22)}
+.o2{inset:13%;border:6px solid rgba(184,228,207,.58);border-left-color:transparent;border-bottom-color:rgba(184,228,207,.12)}
+.o3{inset:29%;border:1px dashed rgba(255,255,255,.28)}
+.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#b8e4cf 0%,#3a9473 42%,#006241 70%,#052b21 100%);box-shadow:0 0 80px rgba(184,228,207,.18)}
+.core:before,.core:after{content:"";position:absolute;top:50%;width:55%;height:1px;background:rgba(255,255,255,.28)}
+.core:before{right:100%}.core:after{left:100%}
+.intro{min-height:82svh;background:var(--cream);display:grid;place-items:center;padding:80px 6vw;text-align:center}
+.intro h2{font-size:clamp(58px,8vw,116px);line-height:.9;color:var(--green);max-width:1080px}
+.intro p{font-size:18px;line-height:1.75;max-width:760px;margin:24px auto 0;color:#68716b}
+.timeline{height:420vh;background:linear-gradient(180deg,#0a3a2c,#07271f 55%,#061d17);color:white;position:relative}
+.sticky{position:sticky;top:0;height:100svh;overflow:hidden}
+.big-year{position:absolute;left:-2vw;bottom:-3vh;font:700 clamp(190px,34vw,520px)/.7 "Playfair Display",serif;letter-spacing:-.08em;color:rgba(255,255,255,.04)}
+.chapter{position:absolute;left:7vw;top:50%;transform:translateY(-43%);width:min(620px,48vw);opacity:0;pointer-events:none;z-index:4}
+.chapter.active{opacity:1;pointer-events:auto}
+.chapter span{font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--mint);text-transform:uppercase}
+.chapter h2{font-size:clamp(58px,8vw,118px);line-height:.86;margin:16px 0 22px}
+.chapter p{font-size:18px;line-height:1.76;color:rgba(255,255,255,.72)}
+.timeline-visual{position:absolute;right:5vw;top:50%;transform:translateY(-50%);width:min(590px,46vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.16);box-shadow:0 0 0 42px rgba(255,255,255,.012),0 0 0 88px rgba(255,255,255,.008)}
+.timeline-visual:before{content:"";position:absolute;inset:22%;border-radius:50%;border:6px solid rgba(184,228,207,.52);border-left-color:transparent}
+.timeline-label{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:600 clamp(34px,4vw,62px)/1 "Playfair Display",serif;letter-spacing:-.03em}
+.dots{position:absolute;right:22px;top:50%;transform:translateY(-50%);display:grid;gap:13px}
+.dots i{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.6)}
+.dots i.active{background:white;transform:scale(1.4)}
+.ph{min-height:115svh;background:#dfe9e3;position:relative;overflow:hidden;display:grid;align-items:center}
+.ph-year{position:absolute;right:-3vw;bottom:-5vh;font:700 clamp(210px,34vw,520px)/.7 "Playfair Display",serif;letter-spacing:-.08em;color:rgba(0,98,65,.055)}
+.ph-inner{width:min(1180px,calc(100% - 40px));margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;position:relative;z-index:2}
+.ph-number{font:700 clamp(110px,16vw,235px)/.8 "Playfair Display",serif;color:var(--green);letter-spacing:-.07em}
+.ph-copy h2{font-size:clamp(54px,6.5vw,92px);line-height:.92;margin:16px 0 22px;color:var(--green)}
+.ph-copy p{font-size:18px;line-height:1.8;color:#5f6963}
+.ph-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid rgba(0,98,65,.14);font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--green)}
+.mission{min-height:100svh;background:#0b1713;color:white;display:grid;place-items:center;text-align:center;padding:90px 6vw;position:relative;overflow:hidden}
+.mission:before{content:"CONNECTION";position:absolute;left:-2vw;top:5%;font:700 clamp(110px,19vw,290px)/1 "Playfair Display",serif;letter-spacing:-.07em;color:rgba(255,255,255,.035)}
+.mission>div{position:relative;z-index:2;max-width:1000px}
+.mission h2{font-size:clamp(58px,8vw,118px);line-height:.88;margin:16px 0 24px}
+.mission p{max-width:760px;margin:auto;font-size:18px;line-height:1.8;color:rgba(255,255,255,.7)}
+.values{background:var(--cream);padding:120px 5vw}
+.values-head{max-width:900px;margin-bottom:50px}
+.values-head h2{font:700 clamp(58px,8vw,112px)/.9 "Playfair Display",serif;letter-spacing:-.05em;color:var(--green);margin-top:14px}
+.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.value{min-height:390px;border-radius:32px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.value:nth-child(1),.value:nth-child(4){background:var(--green);color:white}
+.value:nth-child(2),.value:nth-child(5){background:#d9cdbf}
+.value:nth-child(3),.value:nth-child(6){background:#111713;color:white}
+.value small{position:absolute;top:28px;left:30px;font-size:10px;font-weight:800;letter-spacing:.16em;opacity:.7}
+.value b{position:absolute;right:-8px;top:10%;font:700 clamp(90px,12vw,185px)/1 "Playfair Display",serif;opacity:.06}
+.value h3{font-size:clamp(38px,4vw,58px);line-height:.95;margin-bottom:14px}
+.value p{font-size:15px;line-height:1.7;opacity:.75;max-width:620px}
+.ending{min-height:95svh;background:linear-gradient(135deg,#dcebe2,#f4efe7);display:grid;place-items:center;text-align:center;padding:70px 24px;position:relative;overflow:hidden}
+.ending:before{content:"";position:absolute;width:min(760px,80vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(0,98,65,.15);box-shadow:0 0 0 55px rgba(0,98,65,.025),0 0 0 115px rgba(0,98,65,.012)}
+.ending>div{position:relative;z-index:2}
+.ending h2{font-size:clamp(62px,9vw,128px);line-height:.86;color:var(--green);max-width:980px;margin:16px auto 26px}
+.ending p{max-width:720px;margin:auto;font-size:17px;line-height:1.75;color:#66706a}
+.source-link{display:inline-flex;margin-top:28px;padding:15px 20px;border-radius:999px;background:var(--green);color:white;font-size:13px;font-weight:800}
+footer{padding:28px 5vw;background:#061711;color:rgba(255,255,255,.6);display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:900px){
+  .navlinks>a:not(.pill){display:none}
+  .hero-copy{left:50%;top:16%;transform:translateX(-50%);width:90vw;text-align:center}
+  .hero-copy p{margin:auto}.siren-orbit{left:50%;top:70%;width:min(520px,90vw)}
+  .chapter{left:50%;top:16%;transform:translateX(-50%);width:88vw;text-align:center}
+  .timeline-visual{right:50%;top:72%;transform:translate(50%,-50%);width:min(470px,88vw)}
+  .ph-inner{grid-template-columns:1fr;text-align:center;gap:30px}.ph-meta{justify-content:center}
+  .value-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .nav{height:64px;padding:0 18px}.brand{font-size:11px}.pill{font-size:10px}
+  .hero-copy{top:11%}.hero-copy h1{font-size:56px}.hero-copy p{font-size:15px}
+  .siren-orbit{top:72%;width:96vw}
+  .intro{padding:70px 18px}.intro h2{font-size:52px}.intro p{font-size:15px}
+  .timeline{height:390vh}.chapter h2{font-size:52px}.chapter p{font-size:15px}.timeline-visual{top:73%;width:92vw}
+  .ph{padding:70px 18px}.ph-copy h2{font-size:50px}.ph-copy p{font-size:15px}
+  .mission{padding:80px 18px}.mission h2{font-size:52px}.mission p{font-size:15px}
+  .values{padding:90px 18px}.values-head h2{font-size:52px}.value{min-height:340px;border-radius:28px;padding:24px}
+  .ending h2{font-size:54px}.ending p{font-size:15px}
+  footer{padding:24px 18px;flex-direction:column;align-items:flex-start}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<nav class="top">
-  <a class="brand" href="#home">STARBUCKS</a>
-  <div class="nav">
-    <a href="#home">Home</a>
-    <a href="#why">Experience</a>
-    <a class="menu" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Menu Orbit ↗</a>
+<div class="progress" id="progress"></div>
+
+<nav class="nav">
+  <a class="brand" href="#top">STARBUCKS STORY</a>
+  <div class="navlinks">
+    <a href="#story">Story</a>
+    <a href="#philippines">Philippines</a>
+    <a href="#mission">Mission</a>
+    <a class="pill" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Menu Orbit ↗</a>
   </div>
 </nav>
 
-<main>
-<section class="hero" id="home">
-  <div class="noise"></div>
-  <div class="bgword">STARBUCKS</div>
-  <div class="copy">
-    <span class="kicker">PREMIUM HOME · MOTION FIRST</span>
-    <h1>One cup. One entrance.</h1>
-    <p>This homepage is built to feel like a brand film, not a product grid. The cup stays central, the motion stays intentional, and your existing Menu Orbit remains separate.</p>
-    <div class="actions">
-      <a class="btn primary" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Enter Menu Orbit</a>
-      <a class="btn ghost" href="#why">Explore Home</a>
+<main id="top">
+  <section class="hero">
+    <div class="noise"></div>
+    <div class="hero-year">1971</div>
+    <div class="hero-copy">
+      <span class="eyebrow">ABOUT US · REIMAGINED</span>
+      <h1>More than coffee.</h1>
+      <p>Starbucks began with whole-bean coffee, but its story grew around connection, conversation, community, and the experience created around every cup.</p>
+      <a class="hero-cta" href="#story">Enter the story ↓</a>
     </div>
-  </div>
-  <div class="orbit">
-    <div class="r1"></div><div class="r2"></div><div class="r3"></div>
-  </div>
-  <div class="cupwrap">
-    <div class="shadow"></div>
-    <img id="cup" class="cup" src="./starbucks-drink.jpg" alt="Starbucks drink">
-    <span class="hint">MOVE YOUR FINGER</span>
-  </div>
-</section>
+    <div class="siren-orbit" aria-hidden="true">
+      <div class="o1"></div><div class="o2"></div><div class="o3"></div><div class="core"></div>
+    </div>
+  </section>
 
-<section class="statement" id="why">
-  <div>
-    <span class="kicker" style="color:#006241">HOME SHOULD FEEL DIFFERENT</span>
-    <h2>Less menu. More arrival.</h2>
-    <p>The homepage is the cinematic doorway. The actual menu experience stays where it already works best: inside your Menu Orbit.</p>
-  </div>
-</section>
+  <section class="intro">
+    <div>
+      <span class="eyebrow" style="color:#006241">THE STARBUCKS STORY</span>
+      <h2>From a narrow storefront to a place built around connection.</h2>
+      <p>The story begins in Seattle’s historic Pike Place Market, where a single store offered fresh-roasted whole bean coffees. The company’s name drew inspiration from <em>Moby Dick</em> and the seafaring tradition of early coffee traders.</p>
+    </div>
+  </section>
 
-<section class="ribbon"><div class="track"><span>COFFEE · CRAFT · CONNECTION · HOME · </span><span>COFFEE · CRAFT · CONNECTION · HOME · </span></div></section>
+  <section class="timeline" id="story">
+    <div class="sticky">
+      <div class="big-year" id="bigYear">1971</div>
 
-<section class="features">
-  <div class="grid">
-    <article class="feature"><small>01 · HERO</small><b>SIP</b><h3>One visual focus.</h3><p>The drink owns the first screen instead of competing with cards, categories, and menus.</p></article>
-    <article class="feature"><small>02 · MOTION</small><b>MOVE</b><h3>Premium motion, not noise.</h3><p>Orbit, tilt, scale, and scroll movement are used as one visual language.</p></article>
-    <article class="feature"><small>03 · HANDOFF</small><b>ENTER</b><h3>Then enter the Menu Orbit.</h3><p>The homepage ends by handing visitors directly into your existing menu experience.</p></article>
-  </div>
-</section>
+      <article class="chapter active" data-scene="0">
+        <span>CHAPTER 01 · PIKE PLACE</span>
+        <h2>The beginning.</h2>
+        <p>A single store in Seattle’s historic Pike Place Market focused on fresh-roasted whole bean coffee and the traditions surrounding it.</p>
+      </article>
 
-<section class="final">
-  <div>
-    <span class="kicker" style="color:#006241">THE DOORWAY</span>
-    <h2>Home first. Orbit next.</h2>
-    <p>Your existing Starbucks Menu Orbit remains unchanged. This page simply gives it a stronger cinematic entrance.</p>
-    <a class="btn primary" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Open Menu Orbit</a>
-  </div>
-</section>
+      <article class="chapter" data-scene="1">
+        <span>CHAPTER 02 · 1981</span>
+        <h2>A first cup changes the path.</h2>
+        <p>Howard Schultz first walked into a Starbucks store in 1981, was drawn in by his first cup of Sumatra, and joined the company a year later.</p>
+      </article>
+
+      <article class="chapter" data-scene="2">
+        <span>CHAPTER 03 · 1983</span>
+        <h2>The coffeehouse idea.</h2>
+        <p>A trip to Italy inspired a vision of coffee bars as places for conversation and community — a third place between work and home.</p>
+      </article>
+
+      <article class="chapter" data-scene="3">
+        <span>CHAPTER 04 · 1987</span>
+        <h2>A new chapter begins.</h2>
+        <p>After a period away building Il Giornale coffeehouses, Schultz returned in August 1987 and purchased Starbucks with local investors.</p>
+      </article>
+
+      <div class="timeline-visual"><div class="timeline-label" id="timelineLabel">PIKE PLACE</div></div>
+      <div class="dots"><i class="active"></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="ph" id="philippines">
+    <div class="ph-year">1997</div>
+    <div class="ph-inner">
+      <div class="ph-number">6750</div>
+      <div class="ph-copy">
+        <span class="eyebrow" style="color:#006241">STARBUCKS IN THE PHILIPPINES</span>
+        <h2>A new market, a natural cultural fit.</h2>
+        <p>On December 4, 1997, the first Starbucks store in the Philippines opened at the 6750 Ayala Building in Makati City. The Philippines became Starbucks’ third market outside North America.</p>
+        <div class="ph-meta"><span>MAKATI CITY</span><span>DECEMBER 4 · 1997</span><span>THIRD MARKET OUTSIDE NORTH AMERICA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="mission">
+    <div>
+      <span class="eyebrow">MORE THAN JUST COFFEE</span>
+      <h2>Connection is the point.</h2>
+      <p>The mission presented by Starbucks Philippines centers on nurturing the possibilities of human connection through every cup, conversation, and community — while bringing its coffee heritage and experience to life.</p>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="values-head">
+      <span class="eyebrow" style="color:#006241">HOW THE MISSION LIVES</span>
+      <h2>Six parts of the experience.</h2>
+    </div>
+
+    <div class="value-grid">
+      <article class="value"><small>01 · OUR COFFEE</small><b>C</b><h3>Quality with care.</h3><p>The page emphasizes quality, ethical sourcing, careful roasting, and improving the lives of the people who grow coffee.</p></article>
+      <article class="value"><small>02 · OUR PARTNERS</small><b>P</b><h3>More than a job.</h3><p>Partners are described as people united by passion, diversity, respect, dignity, and the freedom to be themselves.</p></article>
+      <article class="value"><small>03 · OUR CUSTOMERS</small><b>C</b><h3>The cup connects people.</h3><p>The customer relationship is presented as part of the same commitment to quality and the ongoing work behind every coffee experience.</p></article>
+      <article class="value"><small>04 · OUR STORES</small><b>S</b><h3>A place to belong.</h3><p>Stores are framed as havens from the outside world — places for friends, belonging, enjoyment, and human connection at different rhythms of life.</p></article>
+      <article class="value"><small>05 · OUR NEIGHBORHOOD</small><b>N</b><h3>Every store belongs somewhere.</h3><p>The page positions each store as part of a community, with a responsibility to be a good neighbor and contribute through positive action.</p></article>
+      <article class="value"><small>06 · OUR SHAREHOLDERS</small><b>S</b><h3>Accountability matters.</h3><p>Starbucks connects long-term success with delivering well across coffee, partners, customers, stores, and communities.</p></article>
+    </div>
+  </section>
+
+  <section class="ending">
+    <div>
+      <span class="eyebrow" style="color:#006241">THE THREAD THROUGH IT ALL</span>
+      <h2>Coffee starts the story. Connection carries it forward.</h2>
+      <p>This redesign reorganizes the Starbucks Philippines About Us material into one continuous visual journey without introducing content from other sources.</p>
+      <a class="source-link" href="https://starbucks.ph/about-us">View original source ↗</a>
+    </div>
+  </section>
 </main>
 
-<footer><span>STARBUCKS HOME CONCEPT</span><span>Unofficial portfolio redesign. Not affiliated with or endorsed by Starbucks.</span></footer>
+<footer>
+  <span>UNOFFICIAL PORTFOLIO REDESIGN</span>
+  <span>CONTENT SOURCE: STARBUCKS.PH/ABOUT-US ONLY</span>
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 <script>
+const progress=document.getElementById("progress");
+addEventListener("scroll",()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max?scrollY/max*100:0)+"%"},{passive:true});
+
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(window.gsap&&!reduce){
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to(".r1",{rotation:360,duration:28,repeat:-1,ease:"none"});
-  gsap.to(".r2",{rotation:-360,duration:18,repeat:-1,ease:"none"});
-  gsap.to(".r3",{rotation:360,duration:34,repeat:-1,ease:"none"});
-  gsap.from(".copy>*",{y:28,opacity:0,duration:.85,stagger:.1,ease:"power3.out"});
-  gsap.from("#cup",{y:70,rotation:-4,opacity:0,scale:.9,duration:1.1,ease:"power3.out"});
-  gsap.to("#cup",{y:-14,rotation:1.5,duration:3.1,yoyo:true,repeat:-1,ease:"sine.inOut"});
-  gsap.to(".track",{xPercent:-50,ease:"none",scrollTrigger:{trigger:".ribbon",start:"top bottom",end:"bottom top",scrub:true}});
-  gsap.from(".feature",{y:70,opacity:0,stagger:.15,duration:.9,scrollTrigger:{trigger:".features",start:"top 72%"}});
-  gsap.from(".statement h2",{y:50,opacity:0,duration:1,scrollTrigger:{trigger:".statement",start:"top 70%"}});
+  gsap.to(".o1",{rotation:360,duration:30,repeat:-1,ease:"none"});
+  gsap.to(".o2",{rotation:-360,duration:18,repeat:-1,ease:"none"});
+  gsap.to(".o3",{rotation:360,duration:38,repeat:-1,ease:"none"});
+  gsap.from(".hero-copy>*",{y:28,opacity:0,duration:.85,stagger:.1,ease:"power3.out"});
+  gsap.from(".core",{scale:.4,opacity:0,duration:1.15,ease:"power3.out"});
+  gsap.to(".core",{scale:1.06,duration:2.8,yoyo:true,repeat:-1,ease:"sine.inOut"});
+
+  const timeline=document.querySelector(".timeline");
+  const chapters=[...document.querySelectorAll(".chapter")];
+  const dots=[...document.querySelectorAll(".dots i")];
+  const years=["1971","1981","1983","1987"];
+  const labels=["PIKE PLACE","FIRST CUP","ITALY","NEW CHAPTER"];
+  let last=-1;
+
+  ScrollTrigger.create({
+    trigger:timeline,start:"top top",end:"bottom bottom",scrub:true,
+    onUpdate:self=>{
+      const idx=Math.min(3,Math.floor(self.progress*4));
+      if(idx!==last){
+        last=idx;
+        chapters.forEach((c,i)=>{
+          c.classList.toggle("active",i===idx);
+          gsap.to(c,{opacity:i===idx?1:0,y:i===idx?0:28,duration:.35,overwrite:true});
+        });
+        dots.forEach((d,i)=>d.classList.toggle("active",i===idx));
+        document.getElementById("bigYear").textContent=years[idx];
+        document.getElementById("timelineLabel").textContent=labels[idx];
+      }
+      gsap.set(".timeline-visual",{rotation:self.progress*180});
+      gsap.set("#timelineLabel",{rotation:self.progress*-180});
+    }
+  });
+
+  gsap.from(".ph-number",{x:-80,opacity:0,duration:1,scrollTrigger:{trigger:".ph",start:"top 70%"}});
+  gsap.from(".ph-copy>*",{x:70,opacity:0,stagger:.1,duration:.8,scrollTrigger:{trigger:".ph",start:"top 70%"}});
+  gsap.from(".mission h2",{y:60,opacity:0,duration:1,scrollTrigger:{trigger:".mission",start:"top 70%"}});
+  gsap.from(".value",{y:70,opacity:0,stagger:.12,duration:.85,scrollTrigger:{trigger:".values",start:"top 72%"}});
 }
-const hero=document.querySelector(".hero"),cup=document.querySelector("#cup"),orb=document.querySelector(".orbit");
-hero.addEventListener("pointermove",e=>{
-  if(reduce||!window.gsap)return;
-  const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-  gsap.to(cup,{x:x*20,rotateY:x*7,rotateX:-y*6,duration:.4,ease:"power2.out"});
-  gsap.to(orb,{x:x*-14,y:y*-12,duration:.45,ease:"power2.out"});
-});
-hero.addEventListener("pointerleave",()=>{if(!reduce&&window.gsap){gsap.to(cup,{x:0,rotateY:0,rotateX:0,duration:.5});gsap.to(orb,{x:0,y:0,duration:.5})}});
 </script>
 </body>
 </html>
