@@ -1,13 +1,149 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06291f">
+<title>Starbucks Home — Premium Motion Concept</title>
+<meta name="description" content="A premium cinematic Starbucks homepage concept connected to an existing Menu Orbit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#006241;--d:#052b21;--c:#f4efe7;--m:#b8e4cf;--i:#152019}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--c);color:var(--i);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.top{position:fixed;z-index:100;top:0;left:0;right:0;height:72px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;color:#fff;mix-blend-mode:difference}
+.brand{font-weight:800;letter-spacing:.18em;font-size:12px}.nav{display:flex;gap:22px;align-items:center;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.nav .menu{padding:11px 15px;border:1px solid currentColor;border-radius:999px}
+.hero{min-height:100svh;position:relative;overflow:hidden;background:radial-gradient(circle at 68% 47%,rgba(0,98,65,.42),transparent 29%),linear-gradient(145deg,#093c2d,#041b15 62%,#020b09);color:#fff}
+.noise{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(rgba(255,255,255,.85) .55px,transparent .55px);background-size:6px 6px}
+.bgword{position:absolute;left:-2vw;bottom:3vh;font:700 clamp(120px,22vw,340px)/.7 "Playfair Display",serif;letter-spacing:-.075em;color:rgba(255,255,255,.045);white-space:nowrap}
+.copy{position:absolute;z-index:5;left:6vw;top:50%;transform:translateY(-50%);width:min(600px,44vw)}
+.kicker{font-size:10px;letter-spacing:.22em;font-weight:800;color:var(--m);text-transform:uppercase}
+.copy h1,.statement h2,.feature h3,.final h2{font-family:"Playfair Display",serif;letter-spacing:-.05em}
+.copy h1{font-size:clamp(62px,8vw,118px);line-height:.86;margin:16px 0 22px}
+.copy p{font-size:17px;line-height:1.72;color:rgba(255,255,255,.72);max-width:510px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{min-height:50px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.primary{background:#fff;color:var(--d)}.ghost{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.05)}
+.orbit{position:absolute;left:69%;top:50%;transform:translate(-50%,-50%);width:min(650px,48vw);aspect-ratio:1}
+.r1,.r2,.r3{position:absolute;border-radius:50%}.r1{inset:0;border:1px solid rgba(255,255,255,.2)}.r2{inset:12%;border:6px solid rgba(184,228,207,.55);border-left-color:transparent}.r3{inset:26%;border:1px dashed rgba(255,255,255,.24)}
+.cupwrap{position:absolute;z-index:6;left:69%;top:50%;transform:translate(-50%,-50%);width:min(305px,24vw);perspective:1000px}
+.cup{width:100%;border-radius:30px;filter:drop-shadow(0 38px 50px rgba(0,0,0,.38));will-change:transform}
+.shadow{position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);width:72%;height:30px;border-radius:50%;background:rgba(0,0,0,.36);filter:blur(18px)}
+.hint{position:absolute;left:50%;bottom:-52px;transform:translateX(-50%);font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.55);white-space:nowrap}
+.statement{min-height:88svh;background:#f1e7da;display:grid;place-items:center;padding:80px 6vw;text-align:center}
+.statement h2{font-size:clamp(60px,9vw,132px);line-height:.84;color:var(--g);max-width:1180px}
+.statement p{max-width:680px;margin:24px auto 0;font-size:17px;line-height:1.75;color:#67706a}
+.ribbon{overflow:hidden;background:var(--g);color:#fff}.track{display:flex;width:max-content}.track span{font:600 clamp(42px,6vw,86px)/1 "Playfair Display",serif;white-space:nowrap;padding:20px 0}
+.features{padding:120px 5vw;background:#0b1612;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature{min-height:520px;border-radius:34px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.feature:nth-child(1){background:#0c513b}.feature:nth-child(2){background:#d9cbbd;color:#132019}.feature:nth-child(3){background:#111}
+.feature small{position:absolute;top:26px;left:30px;font-weight:800;letter-spacing:.16em}
+.feature h3{font-size:clamp(36px,3.5vw,54px);line-height:.96;margin-bottom:14px}.feature p{line-height:1.7;opacity:.74}
+.feature b{position:absolute;right:-10px;top:12%;font:700 clamp(80px,10vw,170px)/1 "Playfair Display",serif;opacity:.07;letter-spacing:-.06em}
+.final{min-height:95svh;background:linear-gradient(135deg,#dcebe2,#f4efe7);display:grid;place-items:center;text-align:center;padding:70px 24px;position:relative;overflow:hidden}
+.final:before{content:"";position:absolute;width:min(760px,80vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(0,98,65,.15);box-shadow:0 0 0 55px rgba(0,98,65,.025),0 0 0 115px rgba(0,98,65,.012)}
+.final>div{position:relative;z-index:2}.final h2{font-size:clamp(62px,9vw,126px);line-height:.86;color:var(--g);max-width:980px;margin:16px auto 28px}.final p{max-width:680px;margin:auto;line-height:1.7;color:#66706a}
+.final .primary{background:var(--g);color:#fff;margin-top:28px}
+footer{padding:26px 5vw;background:#061711;color:rgba(255,255,255,.6);display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:900px){.nav>a:not(.menu){display:none}.copy{left:50%;top:16%;transform:translateX(-50%);width:90vw;text-align:center}.copy p{margin:auto}.actions{justify-content:center}.orbit{left:50%;top:70%;width:min(520px,90vw)}.cupwrap{left:50%;top:70%;width:min(250px,54vw)}.grid{grid-template-columns:1fr}.feature{min-height:420px}}
+@media(max-width:560px){.top{height:64px;padding:0 18px}.copy{top:11%}.copy h1{font-size:56px}.copy p{font-size:15px}.orbit{top:71%;width:95vw}.cupwrap{top:71%;width:57vw}.statement{padding:70px 18px}.statement h2{font-size:54px}.features{padding:90px 18px}.feature{border-radius:28px;padding:24px}.final h2{font-size:54px}footer{padding:24px 18px;flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a class="brand" href="#home">STARBUCKS</a>
+  <div class="nav">
+    <a href="#home">Home</a>
+    <a href="#why">Experience</a>
+    <a class="menu" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Menu Orbit ↗</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="noise"></div>
+  <div class="bgword">STARBUCKS</div>
+  <div class="copy">
+    <span class="kicker">PREMIUM HOME · MOTION FIRST</span>
+    <h1>One cup. One entrance.</h1>
+    <p>This homepage is built to feel like a brand film, not a product grid. The cup stays central, the motion stays intentional, and your existing Menu Orbit remains separate.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Enter Menu Orbit</a>
+      <a class="btn ghost" href="#why">Explore Home</a>
+    </div>
+  </div>
+  <div class="orbit">
+    <div class="r1"></div><div class="r2"></div><div class="r3"></div>
+  </div>
+  <div class="cupwrap">
+    <div class="shadow"></div>
+    <img id="cup" class="cup" src="./starbucks-drink.jpg" alt="Starbucks drink">
+    <span class="hint">MOVE YOUR FINGER</span>
+  </div>
+</section>
+
+<section class="statement" id="why">
+  <div>
+    <span class="kicker" style="color:#006241">HOME SHOULD FEEL DIFFERENT</span>
+    <h2>Less menu. More arrival.</h2>
+    <p>The homepage is the cinematic doorway. The actual menu experience stays where it already works best: inside your Menu Orbit.</p>
+  </div>
+</section>
+
+<section class="ribbon"><div class="track"><span>COFFEE · CRAFT · CONNECTION · HOME · </span><span>COFFEE · CRAFT · CONNECTION · HOME · </span></div></section>
+
+<section class="features">
+  <div class="grid">
+    <article class="feature"><small>01 · HERO</small><b>SIP</b><h3>One visual focus.</h3><p>The drink owns the first screen instead of competing with cards, categories, and menus.</p></article>
+    <article class="feature"><small>02 · MOTION</small><b>MOVE</b><h3>Premium motion, not noise.</h3><p>Orbit, tilt, scale, and scroll movement are used as one visual language.</p></article>
+    <article class="feature"><small>03 · HANDOFF</small><b>ENTER</b><h3>Then enter the Menu Orbit.</h3><p>The homepage ends by handing visitors directly into your existing menu experience.</p></article>
+  </div>
+</section>
+
+<section class="final">
+  <div>
+    <span class="kicker" style="color:#006241">THE DOORWAY</span>
+    <h2>Home first. Orbit next.</h2>
+    <p>Your existing Starbucks Menu Orbit remains unchanged. This page simply gives it a stronger cinematic entrance.</p>
+    <a class="btn primary" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Open Menu Orbit</a>
+  </div>
+</section>
+</main>
+
+<footer><span>STARBUCKS HOME CONCEPT</span><span>Unofficial portfolio redesign. Not affiliated with or endorsed by Starbucks.</span></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script>
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(window.gsap&&!reduce){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(".r1",{rotation:360,duration:28,repeat:-1,ease:"none"});
+  gsap.to(".r2",{rotation:-360,duration:18,repeat:-1,ease:"none"});
+  gsap.to(".r3",{rotation:360,duration:34,repeat:-1,ease:"none"});
+  gsap.from(".copy>*",{y:28,opacity:0,duration:.85,stagger:.1,ease:"power3.out"});
+  gsap.from("#cup",{y:70,rotation:-4,opacity:0,scale:.9,duration:1.1,ease:"power3.out"});
+  gsap.to("#cup",{y:-14,rotation:1.5,duration:3.1,yoyo:true,repeat:-1,ease:"sine.inOut"});
+  gsap.to(".track",{xPercent:-50,ease:"none",scrollTrigger:{trigger:".ribbon",start:"top bottom",end:"bottom top",scrub:true}});
+  gsap.from(".feature",{y:70,opacity:0,stagger:.15,duration:.9,scrollTrigger:{trigger:".features",start:"top 72%"}});
+  gsap.from(".statement h2",{y:50,opacity:0,duration:1,scrollTrigger:{trigger:".statement",start:"top 70%"}});
+}
+const hero=document.querySelector(".hero"),cup=document.querySelector("#cup"),orb=document.querySelector(".orbit");
+hero.addEventListener("pointermove",e=>{
+  if(reduce||!window.gsap)return;
+  const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  gsap.to(cup,{x:x*20,rotateY:x*7,rotateX:-y*6,duration:.4,ease:"power2.out"});
+  gsap.to(orb,{x:x*-14,y:y*-12,duration:.45,ease:"power2.out"});
+});
+hero.addEventListener("pointerleave",()=>{if(!reduce&&window.gsap){gsap.to(cup,{x:0,rotateY:0,rotateX:0,duration:.5});gsap.to(orb,{x:0,y:0,duration:.5})}});
+</script>
+</body>
 </html>
