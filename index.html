@@ -1,286 +1,51 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#06291f">
-<title>About Starbucks — Reimagined Story</title>
-<meta name="description" content="An unofficial cinematic redesign of the Starbucks Philippines About Us story, using starbucks.ph/about-us as the sole content source.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Store That Kept Changing — Starbucks Story</title>
+<meta name="theme-color" content="#071c15"><meta name="description" content="Unofficial cinematic redesign using Starbucks Philippines About Us as the factual story source.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --green:#006241;--deep:#052b21;--dark:#071713;--cream:#f4efe7;
-  --mint:#b8e4cf;--ink:#152019;--gold:#d7b56d;--line:rgba(255,255,255,.15)
-}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-button{font:inherit}
-.progress{position:fixed;left:0;top:0;height:3px;width:0;background:var(--mint);z-index:200}
-.nav{position:fixed;z-index:120;left:0;right:0;top:0;height:72px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;color:white;mix-blend-mode:difference}
-.brand{font-size:12px;font-weight:800;letter-spacing:.18em}
-.navlinks{display:flex;align-items:center;gap:22px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-.navlinks .pill{border:1px solid currentColor;border-radius:999px;padding:10px 14px}
-.hero{min-height:100svh;position:relative;overflow:hidden;background:radial-gradient(circle at 66% 45%,rgba(0,98,65,.5),transparent 28%),linear-gradient(145deg,#0a3a2c,#041b15 62%,#020d0a);color:white}
-.noise{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(rgba(255,255,255,.8) .5px,transparent .5px);background-size:6px 6px}
-.hero-year{position:absolute;left:-2vw;bottom:1vh;font:700 clamp(170px,32vw,510px)/.72 "Playfair Display",serif;letter-spacing:-.08em;color:rgba(255,255,255,.035)}
-.hero-copy{position:absolute;left:6vw;top:50%;transform:translateY(-50%);z-index:6;width:min(650px,48vw)}
-.eyebrow{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--mint)}
-.hero-copy h1,.intro h2,.chapter h2,.ph-copy h2,.mission h2,.value h3,.ending h2{font-family:"Playfair Display",serif;letter-spacing:-.05em}
-.hero-copy h1{font-size:clamp(68px,9vw,136px);line-height:.84;margin:16px 0 24px}
-.hero-copy p{font-size:18px;line-height:1.75;color:rgba(255,255,255,.72);max-width:560px}
-.hero-cta{display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:15px 20px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.06);font-size:13px;font-weight:800;backdrop-filter:blur(10px)}
-.siren-orbit{position:absolute;left:69%;top:50%;transform:translate(-50%,-50%);width:min(660px,50vw);aspect-ratio:1}
-.siren-orbit .o1,.siren-orbit .o2,.siren-orbit .o3{position:absolute;border-radius:50%}
-.o1{inset:0;border:1px solid rgba(255,255,255,.22)}
-.o2{inset:13%;border:6px solid rgba(184,228,207,.58);border-left-color:transparent;border-bottom-color:rgba(184,228,207,.12)}
-.o3{inset:29%;border:1px dashed rgba(255,255,255,.28)}
-.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#b8e4cf 0%,#3a9473 42%,#006241 70%,#052b21 100%);box-shadow:0 0 80px rgba(184,228,207,.18)}
-.core:before,.core:after{content:"";position:absolute;top:50%;width:55%;height:1px;background:rgba(255,255,255,.28)}
-.core:before{right:100%}.core:after{left:100%}
-.intro{min-height:82svh;background:var(--cream);display:grid;place-items:center;padding:80px 6vw;text-align:center}
-.intro h2{font-size:clamp(58px,8vw,116px);line-height:.9;color:var(--green);max-width:1080px}
-.intro p{font-size:18px;line-height:1.75;max-width:760px;margin:24px auto 0;color:#68716b}
-.timeline{height:420vh;background:linear-gradient(180deg,#0a3a2c,#07271f 55%,#061d17);color:white;position:relative}
-.sticky{position:sticky;top:0;height:100svh;overflow:hidden}
-.big-year{position:absolute;left:-2vw;bottom:-3vh;font:700 clamp(190px,34vw,520px)/.7 "Playfair Display",serif;letter-spacing:-.08em;color:rgba(255,255,255,.04)}
-.chapter{position:absolute;left:7vw;top:50%;transform:translateY(-43%);width:min(620px,48vw);opacity:0;pointer-events:none;z-index:4}
-.chapter.active{opacity:1;pointer-events:auto}
-.chapter span{font-size:10px;font-weight:800;letter-spacing:.22em;color:var(--mint);text-transform:uppercase}
-.chapter h2{font-size:clamp(58px,8vw,118px);line-height:.86;margin:16px 0 22px}
-.chapter p{font-size:18px;line-height:1.76;color:rgba(255,255,255,.72)}
-.timeline-visual{position:absolute;right:5vw;top:50%;transform:translateY(-50%);width:min(590px,46vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.16);box-shadow:0 0 0 42px rgba(255,255,255,.012),0 0 0 88px rgba(255,255,255,.008)}
-.timeline-visual:before{content:"";position:absolute;inset:22%;border-radius:50%;border:6px solid rgba(184,228,207,.52);border-left-color:transparent}
-.timeline-label{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font:600 clamp(34px,4vw,62px)/1 "Playfair Display",serif;letter-spacing:-.03em}
-.dots{position:absolute;right:22px;top:50%;transform:translateY(-50%);display:grid;gap:13px}
-.dots i{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.6)}
-.dots i.active{background:white;transform:scale(1.4)}
-.ph{min-height:115svh;background:#dfe9e3;position:relative;overflow:hidden;display:grid;align-items:center}
-.ph-year{position:absolute;right:-3vw;bottom:-5vh;font:700 clamp(210px,34vw,520px)/.7 "Playfair Display",serif;letter-spacing:-.08em;color:rgba(0,98,65,.055)}
-.ph-inner{width:min(1180px,calc(100% - 40px));margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;position:relative;z-index:2}
-.ph-number{font:700 clamp(110px,16vw,235px)/.8 "Playfair Display",serif;color:var(--green);letter-spacing:-.07em}
-.ph-copy h2{font-size:clamp(54px,6.5vw,92px);line-height:.92;margin:16px 0 22px;color:var(--green)}
-.ph-copy p{font-size:18px;line-height:1.8;color:#5f6963}
-.ph-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid rgba(0,98,65,.14);font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--green)}
-.mission{min-height:100svh;background:#0b1713;color:white;display:grid;place-items:center;text-align:center;padding:90px 6vw;position:relative;overflow:hidden}
-.mission:before{content:"CONNECTION";position:absolute;left:-2vw;top:5%;font:700 clamp(110px,19vw,290px)/1 "Playfair Display",serif;letter-spacing:-.07em;color:rgba(255,255,255,.035)}
-.mission>div{position:relative;z-index:2;max-width:1000px}
-.mission h2{font-size:clamp(58px,8vw,118px);line-height:.88;margin:16px 0 24px}
-.mission p{max-width:760px;margin:auto;font-size:18px;line-height:1.8;color:rgba(255,255,255,.7)}
-.values{background:var(--cream);padding:120px 5vw}
-.values-head{max-width:900px;margin-bottom:50px}
-.values-head h2{font:700 clamp(58px,8vw,112px)/.9 "Playfair Display",serif;letter-spacing:-.05em;color:var(--green);margin-top:14px}
-.value-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.value{min-height:390px;border-radius:32px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
-.value:nth-child(1),.value:nth-child(4){background:var(--green);color:white}
-.value:nth-child(2),.value:nth-child(5){background:#d9cdbf}
-.value:nth-child(3),.value:nth-child(6){background:#111713;color:white}
-.value small{position:absolute;top:28px;left:30px;font-size:10px;font-weight:800;letter-spacing:.16em;opacity:.7}
-.value b{position:absolute;right:-8px;top:10%;font:700 clamp(90px,12vw,185px)/1 "Playfair Display",serif;opacity:.06}
-.value h3{font-size:clamp(38px,4vw,58px);line-height:.95;margin-bottom:14px}
-.value p{font-size:15px;line-height:1.7;opacity:.75;max-width:620px}
-.ending{min-height:95svh;background:linear-gradient(135deg,#dcebe2,#f4efe7);display:grid;place-items:center;text-align:center;padding:70px 24px;position:relative;overflow:hidden}
-.ending:before{content:"";position:absolute;width:min(760px,80vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(0,98,65,.15);box-shadow:0 0 0 55px rgba(0,98,65,.025),0 0 0 115px rgba(0,98,65,.012)}
-.ending>div{position:relative;z-index:2}
-.ending h2{font-size:clamp(62px,9vw,128px);line-height:.86;color:var(--green);max-width:980px;margin:16px auto 26px}
-.ending p{max-width:720px;margin:auto;font-size:17px;line-height:1.75;color:#66706a}
-.source-link{display:inline-flex;margin-top:28px;padding:15px 20px;border-radius:999px;background:var(--green);color:white;font-size:13px;font-weight:800}
-footer{padding:28px 5vw;background:#061711;color:rgba(255,255,255,.6);display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-@media(max-width:900px){
-  .navlinks>a:not(.pill){display:none}
-  .hero-copy{left:50%;top:16%;transform:translateX(-50%);width:90vw;text-align:center}
-  .hero-copy p{margin:auto}.siren-orbit{left:50%;top:70%;width:min(520px,90vw)}
-  .chapter{left:50%;top:16%;transform:translateX(-50%);width:88vw;text-align:center}
-  .timeline-visual{right:50%;top:72%;transform:translate(50%,-50%);width:min(470px,88vw)}
-  .ph-inner{grid-template-columns:1fr;text-align:center;gap:30px}.ph-meta{justify-content:center}
-  .value-grid{grid-template-columns:1fr}
-}
-@media(max-width:560px){
-  .nav{height:64px;padding:0 18px}.brand{font-size:11px}.pill{font-size:10px}
-  .hero-copy{top:11%}.hero-copy h1{font-size:56px}.hero-copy p{font-size:15px}
-  .siren-orbit{top:72%;width:96vw}
-  .intro{padding:70px 18px}.intro h2{font-size:52px}.intro p{font-size:15px}
-  .timeline{height:390vh}.chapter h2{font-size:52px}.chapter p{font-size:15px}.timeline-visual{top:73%;width:92vw}
-  .ph{padding:70px 18px}.ph-copy h2{font-size:50px}.ph-copy p{font-size:15px}
-  .mission{padding:80px 18px}.mission h2{font-size:52px}.mission p{font-size:15px}
-  .values{padding:90px 18px}.values-head h2{font-size:52px}.value{min-height:340px;border-radius:28px;padding:24px}
-  .ending h2{font-size:54px}.ending p{font-size:15px}
-  footer{padding:24px 18px;flex-direction:column;align-items:flex-start}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-</style>
-</head>
-<body>
-<div class="progress" id="progress"></div>
-
-<nav class="nav">
-  <a class="brand" href="#top">STARBUCKS STORY</a>
-  <div class="navlinks">
-    <a href="#story">Story</a>
-    <a href="#philippines">Philippines</a>
-    <a href="#mission">Mission</a>
-    <a class="pill" href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">Menu Orbit ↗</a>
-  </div>
-</nav>
-
-<main id="top">
-  <section class="hero">
-    <div class="noise"></div>
-    <div class="hero-year">1971</div>
-    <div class="hero-copy">
-      <span class="eyebrow">ABOUT US · REIMAGINED</span>
-      <h1>More than coffee.</h1>
-      <p>Starbucks began with whole-bean coffee, but its story grew around connection, conversation, community, and the experience created around every cup.</p>
-      <a class="hero-cta" href="#story">Enter the story ↓</a>
-    </div>
-    <div class="siren-orbit" aria-hidden="true">
-      <div class="o1"></div><div class="o2"></div><div class="o3"></div><div class="core"></div>
-    </div>
-  </section>
-
-  <section class="intro">
-    <div>
-      <span class="eyebrow" style="color:#006241">THE STARBUCKS STORY</span>
-      <h2>From a narrow storefront to a place built around connection.</h2>
-      <p>The story begins in Seattle’s historic Pike Place Market, where a single store offered fresh-roasted whole bean coffees. The company’s name drew inspiration from <em>Moby Dick</em> and the seafaring tradition of early coffee traders.</p>
-    </div>
-  </section>
-
-  <section class="timeline" id="story">
-    <div class="sticky">
-      <div class="big-year" id="bigYear">1971</div>
-
-      <article class="chapter active" data-scene="0">
-        <span>CHAPTER 01 · PIKE PLACE</span>
-        <h2>The beginning.</h2>
-        <p>A single store in Seattle’s historic Pike Place Market focused on fresh-roasted whole bean coffee and the traditions surrounding it.</p>
-      </article>
-
-      <article class="chapter" data-scene="1">
-        <span>CHAPTER 02 · 1981</span>
-        <h2>A first cup changes the path.</h2>
-        <p>Howard Schultz first walked into a Starbucks store in 1981, was drawn in by his first cup of Sumatra, and joined the company a year later.</p>
-      </article>
-
-      <article class="chapter" data-scene="2">
-        <span>CHAPTER 03 · 1983</span>
-        <h2>The coffeehouse idea.</h2>
-        <p>A trip to Italy inspired a vision of coffee bars as places for conversation and community — a third place between work and home.</p>
-      </article>
-
-      <article class="chapter" data-scene="3">
-        <span>CHAPTER 04 · 1987</span>
-        <h2>A new chapter begins.</h2>
-        <p>After a period away building Il Giornale coffeehouses, Schultz returned in August 1987 and purchased Starbucks with local investors.</p>
-      </article>
-
-      <div class="timeline-visual"><div class="timeline-label" id="timelineLabel">PIKE PLACE</div></div>
-      <div class="dots"><i class="active"></i><i></i><i></i><i></i></div>
-    </div>
-  </section>
-
-  <section class="ph" id="philippines">
-    <div class="ph-year">1997</div>
-    <div class="ph-inner">
-      <div class="ph-number">6750</div>
-      <div class="ph-copy">
-        <span class="eyebrow" style="color:#006241">STARBUCKS IN THE PHILIPPINES</span>
-        <h2>A new market, a natural cultural fit.</h2>
-        <p>On December 4, 1997, the first Starbucks store in the Philippines opened at the 6750 Ayala Building in Makati City. The Philippines became Starbucks’ third market outside North America.</p>
-        <div class="ph-meta"><span>MAKATI CITY</span><span>DECEMBER 4 · 1997</span><span>THIRD MARKET OUTSIDE NORTH AMERICA</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mission" id="mission">
-    <div>
-      <span class="eyebrow">MORE THAN JUST COFFEE</span>
-      <h2>Connection is the point.</h2>
-      <p>The mission presented by Starbucks Philippines centers on nurturing the possibilities of human connection through every cup, conversation, and community — while bringing its coffee heritage and experience to life.</p>
-    </div>
-  </section>
-
-  <section class="values">
-    <div class="values-head">
-      <span class="eyebrow" style="color:#006241">HOW THE MISSION LIVES</span>
-      <h2>Six parts of the experience.</h2>
-    </div>
-
-    <div class="value-grid">
-      <article class="value"><small>01 · OUR COFFEE</small><b>C</b><h3>Quality with care.</h3><p>The page emphasizes quality, ethical sourcing, careful roasting, and improving the lives of the people who grow coffee.</p></article>
-      <article class="value"><small>02 · OUR PARTNERS</small><b>P</b><h3>More than a job.</h3><p>Partners are described as people united by passion, diversity, respect, dignity, and the freedom to be themselves.</p></article>
-      <article class="value"><small>03 · OUR CUSTOMERS</small><b>C</b><h3>The cup connects people.</h3><p>The customer relationship is presented as part of the same commitment to quality and the ongoing work behind every coffee experience.</p></article>
-      <article class="value"><small>04 · OUR STORES</small><b>S</b><h3>A place to belong.</h3><p>Stores are framed as havens from the outside world — places for friends, belonging, enjoyment, and human connection at different rhythms of life.</p></article>
-      <article class="value"><small>05 · OUR NEIGHBORHOOD</small><b>N</b><h3>Every store belongs somewhere.</h3><p>The page positions each store as part of a community, with a responsibility to be a good neighbor and contribute through positive action.</p></article>
-      <article class="value"><small>06 · OUR SHAREHOLDERS</small><b>S</b><h3>Accountability matters.</h3><p>Starbucks connects long-term success with delivering well across coffee, partners, customers, stores, and communities.</p></article>
-    </div>
-  </section>
-
-  <section class="ending">
-    <div>
-      <span class="eyebrow" style="color:#006241">THE THREAD THROUGH IT ALL</span>
-      <h2>Coffee starts the story. Connection carries it forward.</h2>
-      <p>This redesign reorganizes the Starbucks Philippines About Us material into one continuous visual journey without introducing content from other sources.</p>
-      <a class="source-link" href="https://starbucks.ph/about-us">View original source ↗</a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <span>UNOFFICIAL PORTFOLIO REDESIGN</span>
-  <span>CONTENT SOURCE: STARBUCKS.PH/ABOUT-US ONLY</span>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#07130f;color:#f6f0e7;font-family:"DM Sans",sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}
+:root{--g:#006241;--dark:#07130f;--cream:#f4eee4;--gold:#d4b071;--muted:#b9b2a8}
+.progress{position:fixed;z-index:99;top:0;left:0;height:3px;background:#d7eadf;width:0}.nav{position:fixed;z-index:80;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 5vw;background:linear-gradient(#07130fcc,transparent);font-size:11px;letter-spacing:.16em;text-transform:uppercase}.nav b{font-weight:700}.nav a:last-child{border:1px solid #ffffff55;border-radius:99px;padding:10px 14px}
+.scene{min-height:100svh;position:relative;display:grid;align-items:end;overflow:hidden}.photo{position:absolute;inset:-7%;background-size:cover;background-position:center;filter:saturate(.78) contrast(1.05);transform:scale(1.03)}.shade{position:absolute;inset:0;background:linear-gradient(90deg,#06130fd9 0%,#06130f80 48%,#06130f26),linear-gradient(0deg,#06130fe8 0%,transparent 55%)}.copy{position:relative;z-index:3;width:min(780px,90vw);margin:0 0 10vh 6vw}.kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#d7c8ae}.copy h1,.copy h2,.year,.statement{font-family:"Libre Caslon Display",serif;font-weight:400}.copy h1{font-size:clamp(60px,9vw,142px);line-height:.82;letter-spacing:-.045em;margin:14px 0 25px}.copy h2{font-size:clamp(48px,7vw,105px);line-height:.88;letter-spacing:-.04em;margin:12px 0 22px}.copy p{font-size:clamp(15px,1.35vw,19px);line-height:1.75;color:#e6dfd5;max-width:650px}.enter{display:inline-flex;margin-top:20px;border:1px solid #ffffff55;padding:14px 18px;border-radius:99px;font-weight:700;font-size:12px}.year{position:absolute;z-index:2;right:2vw;bottom:-.08em;font-size:clamp(130px,29vw,450px);line-height:.75;color:#ffffff0d;letter-spacing:-.08em}
+.hero .photo{background-image:url("https://cloudfront-us-east-2.images.arcpublishing.com/reuters/UI5QLCSMP5LR3FPHA6PDMA7XFA.jpg");background-position:center}.hero .shade{background:linear-gradient(90deg,#04110de6,#04110d7d 58%,#04110d33),linear-gradient(0deg,#04110dcc,transparent 50%)}
+.door{position:absolute;z-index:2;left:50%;top:50%;width:18vw;height:48vh;transform:translate(-50%,-50%);border:1px solid #e9c98d66;box-shadow:0 0 90px #d6a85d24 inset;pointer-events:none}
+.history{background:#0b1b15}.chapter{min-height:92svh;position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:9vw 7vw;border-top:1px solid #ffffff12}.chapter:nth-child(even){background:#10241c}.chapter .num{font-family:"Libre Caslon Display";font-size:clamp(100px,18vw,270px);color:#e4d3b51a;letter-spacing:-.07em}.chapter .text{max-width:570px}.chapter h2{font:400 clamp(46px,6vw,86px)/.9 "Libre Caslon Display";margin:10px 0 20px}.chapter p{color:#c8c1b8;line-height:1.75}.cup{width:76px;height:92px;border:1px solid #d9c5a688;border-radius:4px 4px 20px 20px;margin:25px 0;position:relative}.cup:after{content:"";position:absolute;width:32px;height:38px;border:1px solid #d9c5a688;border-left:0;border-radius:0 20px 20px 0;right:-33px;top:18px}
+.italy{background:radial-gradient(circle at 70% 40%,#75432955,transparent 28%),#1b1711}.line{height:1px;background:#d3b78644;margin:28px 0}
+.ph{min-height:115svh;background:#ece4d7;color:#10251c;display:grid;place-items:center;text-align:center;padding:90px 20px;position:relative;overflow:hidden}.ph:before{content:"6750";position:absolute;font:400 clamp(190px,37vw,560px)/1 "Libre Caslon Display";color:#0062410b;letter-spacing:-.08em}.ph .inside{position:relative;z-index:2;max-width:980px}.ph h2{font:400 clamp(70px,12vw,175px)/.75 "Libre Caslon Display";letter-spacing:-.06em;margin:12px 0 35px;color:#006241}.ph p{max-width:680px;margin:auto;line-height:1.8;color:#4c5a53}.facts{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:34px;font-size:11px;font-weight:700;letter-spacing:.14em}
+.modern{min-height:120svh;position:relative;background:#17130e;display:grid;align-items:center}.modern .photo{background-image:url("https://media-cdn.tripadvisor.com/media/photo-s/03/1b/2f/89/starbucks.jpg");opacity:.52;background-position:center}.modern .shade{background:linear-gradient(90deg,#0b1510e8,#0b151085),linear-gradient(0deg,#07130fe8,transparent 60%)}.mission{position:relative;z-index:3;padding:15vh 7vw;width:min(900px,92vw)}.mission h2{font:400 clamp(58px,8vw,120px)/.85 "Libre Caslon Display";letter-spacing:-.045em;margin:12px 0 28px}.mission p{line-height:1.8;color:#ddd4c7;max-width:680px}
+.living{background:#f1eadf;color:#15231c;padding:12vh 5vw}.living-head{max-width:900px;margin-bottom:70px}.living h2{font:400 clamp(58px,8vw,116px)/.85 "Libre Caslon Display";letter-spacing:-.05em;margin:12px 0}.moments{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#b9aa9644;border:1px solid #b9aa9644}.moment{background:#f1eadf;min-height:300px;padding:32px;display:flex;flex-direction:column;justify-content:space-between}.moment span{font-size:10px;letter-spacing:.16em;color:#006241;font-weight:700}.moment h3{font:400 clamp(32px,3.2vw,52px)/.95 "Libre Caslon Display";margin:0 0 12px}.moment p{font-size:14px;line-height:1.65;color:#667068;margin:0}
+.end{min-height:100svh;display:grid;place-items:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at 50% 50%,#0c563d,#061a13 55%,#04100c)}.end .statement{font-size:clamp(58px,9vw,132px);line-height:.84;letter-spacing:-.05em;max-width:1100px}.end p{color:#c8d0ca;max-width:650px;line-height:1.7;margin:25px auto}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.actions a{padding:14px 18px;border:1px solid #ffffff55;border-radius:99px;font-size:12px;font-weight:700}.actions a:first-child{background:#f4eee4;color:#123326;border-color:#f4eee4}
+footer{padding:25px 5vw;background:#030b08;color:#829088;font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between;gap:15px}
+@media(max-width:800px){.nav{padding:18px}.nav b{max-width:180px}.copy{margin:0 auto 9vh;width:88vw}.copy h1{font-size:62px}.door{width:44vw;height:38vh}.chapter{grid-template-columns:1fr;padding:90px 24px;min-height:82svh}.chapter .num{font-size:120px;line-height:.8}.moments{grid-template-columns:1fr}.moment{min-height:230px}.mission{padding:12vh 24px}.modern .photo{inset:-2%}.ph h2{font-size:82px}footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.photo{transform:none!important}.chapter,.moment,.copy>*{opacity:1!important;transform:none!important}}
+</style></head><body>
+<div class="progress"></div>
+<nav class="nav"><b>THE STORE THAT KEPT CHANGING</b><a href="#philippines">Philippines</a></nav>
+<main>
+<section class="scene hero"><div class="photo"></div><div class="shade"></div><div class="door"></div><div class="year">1971</div><div class="copy"><span class="kicker">THE STARBUCKS STORY</span><h1>More than coffee.</h1><p>Enter a story that began with whole-bean coffee and grew around conversation, community and human connection.</p><a class="enter" href="#story">ENTER THE STORY ↓</a></div></section>
+<section class="history" id="story">
+<article class="chapter"><div class="num">1971</div><div class="text"><span class="kicker">PIKE PLACE MARKET</span><h2>The door opens.</h2><p>In Seattle’s historic Pike Place Market, a single store offered fresh-roasted whole bean coffees. This is where the journey begins.</p></div></article>
+<article class="chapter"><div class="num">1981</div><div class="text"><span class="kicker">A FIRST ENCOUNTER</span><div class="cup"></div><h2>One cup changes the path.</h2><p>Howard Schultz first walked into a Starbucks store in 1981. His first cup of Sumatra left an impression; a year later, he joined the company.</p></div></article>
+<article class="chapter italy"><div class="num">1983</div><div class="text"><span class="kicker">ITALY</span><h2>The store becomes a coffeehouse.</h2><div class="line"></div><p>A trip to Italy inspired a vision of coffee bars as places for conversation and community — a third place between work and home.</p></div></article>
+<article class="chapter"><div class="num">1987</div><div class="text"><span class="kicker">A NEW CHAPTER</span><h2>The idea comes home.</h2><p>After building Il Giornale coffeehouses, Schultz returned in August 1987 and purchased Starbucks with local investors.</p></div></article>
+</section>
+<section class="ph" id="philippines"><div class="inside"><span class="kicker" style="color:#006241">STARBUCKS IN THE PHILIPPINES</span><h2>1997</h2><p>On December 4, the first Starbucks store in the Philippines opened at the 6750 Ayala Building in Makati City. The Philippines became Starbucks’ third market outside North America.</p><div class="facts"><span>6750 AYALA BUILDING</span><span>MAKATI CITY</span><span>DECEMBER 4 · 1997</span></div></div></section>
+<section class="modern"><div class="photo"></div><div class="shade"></div><div class="mission"><span class="kicker">MORE THAN JUST COFFEE</span><h2>A place for connection.</h2><p>The story moves from coffee heritage into the possibilities created by every cup, conversation and community.</p></div></section>
+<section class="living"><div class="living-head"><span class="kicker" style="color:#006241">ONE LIVING COFFEEHOUSE</span><h2>Six parts. One experience.</h2></div><div class="moments">
+<article class="moment"><span>01 · OUR COFFEE</span><div><h3>Craft begins here.</h3><p>Quality, ethical sourcing, careful roasting and respect for the people who grow coffee.</p></div></article>
+<article class="moment"><span>02 · OUR PARTNERS</span><div><h3>The people behind the counter.</h3><p>Passion, diversity, dignity, respect and room for partners to be themselves.</p></div></article>
+<article class="moment"><span>03 · OUR CUSTOMERS</span><div><h3>Across the counter.</h3><p>The relationship with customers is part of the work and care behind every coffee experience.</p></div></article>
+<article class="moment"><span>04 · OUR STORES</span><div><h3>A place to belong.</h3><p>Places for friends, enjoyment, everyday rhythms and human connection.</p></div></article>
+<article class="moment"><span>05 · OUR NEIGHBORHOOD</span><div><h3>Beyond the front door.</h3><p>Every store is part of a community, with a responsibility to be a good neighbor.</p></div></article>
+<article class="moment"><span>06 · OUR SHAREHOLDERS</span><div><h3>The wider responsibility.</h3><p>Long-term success is connected to delivering well across coffee, partners, customers, stores and communities.</p></div></article>
+</div></section>
+<section class="end"><div><span class="kicker">THE THREAD THROUGH IT ALL</span><div class="statement">Coffee starts the story.<br>Connection carries it forward.</div><p>An unofficial portfolio redesign. Factual story content is based on Starbucks Philippines’ About Us page.</p><div class="actions"><a href="https://starbucks.ph/about-us">VIEW ORIGINAL SOURCE ↗</a><a href="https://dariakimberly4-netizen.github.io/interactive-drink-menu/starbucks-menu-orbit/">ENTER MENU ORBIT ↗</a></div></div></section>
+</main><footer><span>UNOFFICIAL PORTFOLIO REDESIGN</span><span>CONTENT SOURCE · STARBUCKS.PH/ABOUT-US</span></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
 <script>
-const progress=document.getElementById("progress");
-addEventListener("scroll",()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max?scrollY/max*100:0)+"%"},{passive:true});
-
+const bar=document.querySelector(".progress");addEventListener("scroll",()=>{const m=document.documentElement.scrollHeight-innerHeight;bar.style.width=(m?scrollY/m*100:0)+"%"},{passive:true});
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-if(window.gsap&&!reduce){
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.to(".o1",{rotation:360,duration:30,repeat:-1,ease:"none"});
-  gsap.to(".o2",{rotation:-360,duration:18,repeat:-1,ease:"none"});
-  gsap.to(".o3",{rotation:360,duration:38,repeat:-1,ease:"none"});
-  gsap.from(".hero-copy>*",{y:28,opacity:0,duration:.85,stagger:.1,ease:"power3.out"});
-  gsap.from(".core",{scale:.4,opacity:0,duration:1.15,ease:"power3.out"});
-  gsap.to(".core",{scale:1.06,duration:2.8,yoyo:true,repeat:-1,ease:"sine.inOut"});
-
-  const timeline=document.querySelector(".timeline");
-  const chapters=[...document.querySelectorAll(".chapter")];
-  const dots=[...document.querySelectorAll(".dots i")];
-  const years=["1971","1981","1983","1987"];
-  const labels=["PIKE PLACE","FIRST CUP","ITALY","NEW CHAPTER"];
-  let last=-1;
-
-  ScrollTrigger.create({
-    trigger:timeline,start:"top top",end:"bottom bottom",scrub:true,
-    onUpdate:self=>{
-      const idx=Math.min(3,Math.floor(self.progress*4));
-      if(idx!==last){
-        last=idx;
-        chapters.forEach((c,i)=>{
-          c.classList.toggle("active",i===idx);
-          gsap.to(c,{opacity:i===idx?1:0,y:i===idx?0:28,duration:.35,overwrite:true});
-        });
-        dots.forEach((d,i)=>d.classList.toggle("active",i===idx));
-        document.getElementById("bigYear").textContent=years[idx];
-        document.getElementById("timelineLabel").textContent=labels[idx];
-      }
-      gsap.set(".timeline-visual",{rotation:self.progress*180});
-      gsap.set("#timelineLabel",{rotation:self.progress*-180});
-    }
-  });
-
-  gsap.from(".ph-number",{x:-80,opacity:0,duration:1,scrollTrigger:{trigger:".ph",start:"top 70%"}});
-  gsap.from(".ph-copy>*",{x:70,opacity:0,stagger:.1,duration:.8,scrollTrigger:{trigger:".ph",start:"top 70%"}});
-  gsap.from(".mission h2",{y:60,opacity:0,duration:1,scrollTrigger:{trigger:".mission",start:"top 70%"}});
-  gsap.from(".value",{y:70,opacity:0,stagger:.12,duration:.85,scrollTrigger:{trigger:".values",start:"top 72%"}});
-}
-</script>
-</body>
-</html>
+if(window.gsap&&!reduce){gsap.registerPlugin(ScrollTrigger);gsap.from(".hero .copy>*",{y:30,opacity:0,stagger:.11,duration:.9,ease:"power3.out"});gsap.to(".hero .photo",{scale:1.16,yPercent:5,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});gsap.to(".door",{scale:1.7,opacity:0,ease:"none",scrollTrigger:{trigger:".hero",start:"35% top",end:"bottom top",scrub:true}});document.querySelectorAll(".chapter").forEach((el,i)=>{gsap.from(el.querySelector(".num"),{x:i%2?-70:70,opacity:0,duration:1,scrollTrigger:{trigger:el,start:"top 72%"}});gsap.from(el.querySelectorAll(".text>*"),{y:28,opacity:0,stagger:.09,duration:.7,scrollTrigger:{trigger:el,start:"top 68%"}})});gsap.from(".ph .inside>*",{y:40,opacity:0,stagger:.12,duration:.8,scrollTrigger:{trigger:".ph",start:"top 65%"}});gsap.to(".modern .photo",{scale:1.14,ease:"none",scrollTrigger:{trigger:".modern",start:"top bottom",end:"bottom top",scrub:true}});gsap.from(".mission>*",{y:35,opacity:0,stagger:.12,duration:.8,scrollTrigger:{trigger:".modern",start:"top 60%"}});gsap.from(".moment",{y:45,opacity:0,stagger:.08,duration:.65,scrollTrigger:{trigger:".moments",start:"top 78%"}})}
+</script></body></html>
